@@ -1,0 +1,7 @@
+name: Zabbix-Server
+description: A Rancher template for Zabbix-Server
+version: 0
+category: Monitoring
+maintainer: rockaut
+license: MIT
+projectURL: https://github.com/rockaut/rancher_zabbix_template
