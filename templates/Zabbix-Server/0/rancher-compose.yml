@@ -13,7 +13,7 @@
       - variable: MYSQL_PASSWORD
         label: MySQL Password
         description: Define the MySQL User Password
-        type: string
+        type: password
         default: mysql123!
       - variable: MYSQL_DATABASE
         label: MySQL Zabbix DB
@@ -23,7 +23,7 @@
       - variable: MYSQL_ROOT_PASSWORD
         label: MySQL Root Password
         description: Define the MySQL Root Password
-        type: string
+        type: password
       - variable: MYSQL_USER
         label: MySQL Zabbix User
         description: Define the MySQL Zabbix User
