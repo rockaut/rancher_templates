@@ -1,0 +1,7 @@
+name: Zabbix-Proxy
+description: A Rancher template for Zabbix-Proxy
+version: 0
+category: Monitoring
+maintainer: rockaut
+license: MIT
+projectURL: https://github.com/rockaut/rancher_templates

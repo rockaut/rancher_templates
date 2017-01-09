@@ -1,0 +1,76 @@
+.catalog:
+    name: "Zabbix-Proxy"
+    version: "v0"
+    description: "The Zabbix Monitoring Proxy"
+    uuid: ZabbixServer-0
+    minimum_rancher_version: v1.1.4
+    questions:
+      - variable: ZABBIXAGENTHOSTNAME
+        label: Zabbix Agent Hostname
+        description: Define the Zabbix Agent Hostname
+        type: string
+        default: zabbixsrv
+      - variable: MYSQL_PASSWORD
+        label: MySQL Password
+        description: Define the MySQL User Password
+        type: password
+        default: mysql123!
+      - variable: MYSQL_DATABASE
+        label: MySQL Zabbix DB
+        description: Define the MySQL User Password
+        type: string
+        default: zabbix
+      - variable: MYSQL_ROOT_PASSWORD
+        label: MySQL Root Password
+        description: Define the MySQL Root Password
+        type: password
+      - variable: MYSQL_USER
+        label: MySQL Zabbix User
+        description: Define the MySQL Zabbix User
+        type: string
+        default: zabbix
+      - variable: ZABBIXPROXYMODE
+        label: Zabbox Proxy Mode
+        description: Define the Mode for Proxy
+        type: string
+        default: 0
+      - variable: ZABBIXCONFIGFREQUENCY
+        label: Zabbox Proxy Config Frequency
+        description: Define the interval for getting config
+        type: string
+        default: 600
+      - variable: ZABBIXDATASENDERFREQUENCY
+        label: Zabbox Proxy Datasender Frequency
+        description: Define the interval for sending data
+        type: string
+        default: 60
+      - variable: ZABBIXPROXYHEARTBEATFREQUENCY
+        label: Zabbox Proxy Heartbeat Frequency
+        description: Define the interval for sending proxy heartbeats
+        type: string
+        default: 60
+services:
+  agent:
+    scale: 1
+    start_on_create: false
+    health_check:
+      response_timeout: 2000
+      healthy_threshold: 2
+      port: 10050
+      unhealthy_threshold: 3
+      initializing_timeout: 60000
+      interval: 30000
+      strategy: none
+      reinitializing_timeout: 60000
+  java-gateway:
+    scale: 1
+    start_on_create: false
+  snmptraps:
+    scale: 1
+    start_on_create: false
+  mysql-server:
+    scale: 1
+    start_on_create: false
+  zabbix-server:
+    scale: 1
+    start_on_create: false
