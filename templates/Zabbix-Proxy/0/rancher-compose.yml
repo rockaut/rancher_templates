@@ -32,22 +32,22 @@
       - variable: ZABBIXPROXYMODE
         label: Zabbox Proxy Mode
         description: Define the Mode for Proxy
-        type: string
+        type: int
         default: 0
       - variable: ZABBIXCONFIGFREQUENCY
         label: Zabbox Proxy Config Frequency
         description: Define the interval for getting config
-        type: string
+        type: int
         default: 600
       - variable: ZABBIXDATASENDERFREQUENCY
         label: Zabbox Proxy Datasender Frequency
         description: Define the interval for sending data
-        type: string
+        type: int
         default: 60
       - variable: ZABBIXPROXYHEARTBEATFREQUENCY
         label: Zabbox Proxy Heartbeat Frequency
         description: Define the interval for sending proxy heartbeats
-        type: string
+        type: int
         default: 60
 services:
   agent:
