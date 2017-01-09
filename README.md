@@ -1,1 +1,1 @@
-# rancher_zabbix_template
+# rancher_templates
